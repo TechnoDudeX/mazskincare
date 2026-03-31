@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="theme-color" content="#f8f5f0" />
+  <meta name="theme-color" content="#faf7f4" />
   <title>Skincare Routine</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧴</text></svg>" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.4/babel.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
   <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
@@ -21,329 +21,382 @@
    LIGHT MODE (default)
    ═══════════════════════════════════════════ */
 :root {
-  --bg: #f8f5f0;
+  --bg: #fdf8f5;
   --surface: #ffffff;
-  --surface2: #f0ece6;
-  --border: #e4dfd8;
-  --border2: #d4cec6;
-  --text: #1a1612;
-  --text2: #5c554c;
-  --text3: #8a8279;
-  --text4: #c0b9b0;
-  --green: #4a8c3f;
-  --green-bg: #e8f5e4;
-  --green-text: #2d6623;
-  --purple: #7c5aab;
-  --purple-bg: #f0e8f8;
-  --purple-text: #5a3d80;
-  --accent: #7c5aab;
-  --accent-hover: #6b4d96;
-  --danger: #c43e3e;
-  --danger-bg: #fce8e8;
-  --surface-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --surface-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
-  --font: 'DM Sans', -apple-system, sans-serif;
-  --display: 'Fraunces', Georgia, serif;
+  --surface2: #f5ede6;
+  --surface3: #ebe2d8;
+  --border: #e0d4c8;
+  --border2: #d0c2b4;
+  --text: #1a0e08;
+  --text2: #5a4438;
+  --text3: #8a7468;
+  --text4: #bea898;
+  --heading: #120806;
+  --am: #16a34a;
+  --am-light: #dcfce7;
+  --am-text: #15803d;
+  --pm: #9333ea;
+  --pm-light: #f3e8ff;
+  --pm-text: #7e22ce;
+  --accent: #e11d80;
+  --accent-hover: #be185d;
+  --accent-light: #fce7f3;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+  --done-bg: #f0fdf4;
+  --done-border: #86efac;
+  --shadow-sm: 0 1px 2px rgba(44,24,16,0.04);
+  --shadow-md: 0 2px 8px rgba(44,24,16,0.06), 0 1px 2px rgba(44,24,16,0.04);
+  --shadow-lg: 0 4px 16px rgba(44,24,16,0.08), 0 2px 4px rgba(44,24,16,0.04);
+  --shadow-xl: 0 8px 32px rgba(44,24,16,0.10), 0 2px 8px rgba(44,24,16,0.04);
+  --font: 'Inter', -apple-system, sans-serif;
+  --display: 'Playfair Display', Georgia, serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
 }
 
 /* ═══════════════════════════════════════════
    DARK MODE
    ═══════════════════════════════════════════ */
 .dark {
-  --bg: #0c0a0e;
-  --surface: #16131a;
-  --surface2: #1e1a24;
-  --border: #28232e;
-  --border2: #342e3c;
-  --text: #ede8e3;
-  --text2: #a8a0b0;
-  --text3: #6e6578;
-  --text4: #3e3648;
-  --green: #a8d89a;
-  --green-bg: #1a2e1a;
-  --green-text: #a8d89a;
-  --purple: #d4b5ff;
-  --purple-bg: #2a1a2e;
-  --purple-text: #d4b5ff;
-  --accent: #d4b5ff;
-  --accent-hover: #c5a0f0;
-  --danger: #ff6b6b;
+  --bg: #0e0b0d;
+  --surface: #1a1618;
+  --surface2: #231e20;
+  --surface3: #2c2628;
+  --border: #342d30;
+  --border2: #3e363a;
+  --text: #f0ebe6;
+  --text2: #c0b4ac;
+  --text3: #7a6e68;
+  --text4: #453d3a;
+  --heading: #f8f4f0;
+  --am: #4ade80;
+  --am-light: #14532d;
+  --am-text: #4ade80;
+  --pm: #c084fc;
+  --pm-light: #3b0764;
+  --pm-text: #c084fc;
+  --accent: #fb7185;
+  --accent-hover: #f43f5e;
+  --accent-light: #2e1a20;
+  --danger: #f87171;
   --danger-bg: #2e1a1a;
-  --surface-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
-  --surface-shadow-hover: 0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.2);
+  --done-bg: #052e16;
+  --done-border: #22c55e;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.15);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.15);
+  --shadow-xl: 0 8px 32px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.15);
+  color-scheme: dark;
 }
-
-.dark { color-scheme: dark; }
 
 html, body {
   background: var(--bg); color: var(--text); font-family: var(--font);
-  -webkit-font-smoothing: antialiased; transition: background 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased; transition: background 0.35s ease, color 0.35s ease;
+  line-height: 1.5;
 }
 
+/* ═══════════════════════════════════════════
+   LOADING
+   ═══════════════════════════════════════════ */
 .loading-screen {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  height: 100vh; gap: 16px;
+  height: 100vh; gap: 20px;
 }
 .loading-spinner {
-  width: 32px; height: 32px; border: 2px solid var(--border2);
+  width: 28px; height: 28px; border: 2px solid var(--border);
   border-top-color: var(--accent); border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
+.loading-text { color: var(--text3); font-size: 13px; font-weight: 500; letter-spacing: 0.3px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ═══════════════════════════════════════════
+   DISPLAY PAGE
+   ═══════════════════════════════════════════ */
 .display-page {
-  min-height: 100vh; display: flex; flex-direction: column;
-  max-width: 720px; margin: 0 auto; padding: 32px 24px 48px;
+  min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column;
+  max-width: 640px; margin: 0 auto; padding: 40px 24px 60px;
 }
 
 .display-header {
-  display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px;
+  display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px;
 }
 
 .display-day {
-  font-family: var(--display); font-size: 42px; font-weight: 700;
-  color: var(--text); letter-spacing: -1px; line-height: 1.1;
+  font-family: var(--display); font-size: 44px; font-weight: 600;
+  color: var(--heading); letter-spacing: -0.5px; line-height: 1.05;
 }
 
-.display-controls { display: flex; gap: 8px; align-items: center; padding-top: 8px; }
+.display-controls { display: flex; gap: 6px; align-items: center; padding-top: 10px; }
 
 .icon-btn {
-  width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border);
+  width: 36px; height: 36px; border-radius: var(--radius-sm); border: 1px solid var(--border);
   background: var(--surface); color: var(--text3); cursor: pointer;
-  display: flex; align-items: center; justify-content: center; font-size: 16px;
-  transition: all 0.2s; box-shadow: var(--surface-shadow);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s ease; box-shadow: var(--shadow-sm); position: relative;
 }
-.icon-btn:hover { background: var(--surface2); color: var(--text2); border-color: var(--border2); box-shadow: var(--surface-shadow-hover); }
+.icon-btn svg { width: 16px; height: 16px; }
+.icon-btn:hover { background: var(--surface2); color: var(--text2); border-color: var(--border2); box-shadow: var(--shadow-md); }
+.icon-btn:active { transform: scale(0.95); }
 .icon-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .display-time {
-  font-size: 13px; font-weight: 500; color: var(--text3);
-  letter-spacing: 1px; margin-bottom: 20px;
+  font-size: 12px; font-weight: 500; color: var(--text4);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px;
 }
 
-.display-meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
+.display-meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 24px; }
 
 .period-badge {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-  padding: 5px 14px; border-radius: 20px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 6px 14px; border-radius: 100px;
 }
-.period-am { background: var(--green-bg); color: var(--green-text); }
-.period-pm { background: var(--purple-bg); color: var(--purple-text); }
+.period-badge svg { width: 14px; height: 14px; }
+.period-am { background: var(--am-light); color: var(--am-text); }
+.period-pm { background: var(--pm-light); color: var(--pm-text); }
 
 .tag {
-  font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+  font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 100px;
   letter-spacing: 0.5px; text-transform: uppercase;
 }
 
 .affirmation {
-  font-family: var(--display); font-style: italic; font-size: 17px;
-  font-weight: 400; color: var(--text3); line-height: 1.6;
-  margin-bottom: 32px; max-width: 520px;
+  font-family: var(--display); font-style: italic; font-size: 18px;
+  font-weight: 400; color: var(--text3); line-height: 1.7;
+  margin-bottom: 36px; max-width: 480px;
 }
 
-.progress-bar-wrap {
-  height: 3px; background: var(--surface2); border-radius: 3px; margin-bottom: 28px;
-  overflow: hidden;
+/* ═══════════════════════════════════════════
+   PROGRESS
+   ═══════════════════════════════════════════ */
+.progress-wrap { margin-bottom: 32px; }
+.progress-label {
+  font-size: 11px; color: var(--text3); letter-spacing: 0.5px; margin-bottom: 10px;
+  font-weight: 600; text-transform: uppercase;
+}
+.progress-bar-track {
+  height: 4px; background: var(--surface2); border-radius: 100px; overflow: hidden;
 }
 .progress-bar-fill {
-  height: 100%; border-radius: 3px; transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
-  background: linear-gradient(90deg, var(--green), var(--purple));
+  height: 100%; border-radius: 100px; transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+  background: linear-gradient(90deg, #22c55e, #a855f7, #ec4899);
 }
 
-.progress-label {
-  font-size: 11px; color: var(--text3); letter-spacing: 0.5px; margin-bottom: 8px;
-  font-weight: 600;
-}
-
+/* ═══════════════════════════════════════════
+   STEP CARDS
+   ═══════════════════════════════════════════ */
 .step-card {
   display: flex; align-items: center; gap: 14px;
-  padding: 16px 18px; margin-bottom: 8px;
+  padding: 14px 16px; margin-bottom: 6px;
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; cursor: pointer; transition: all 0.25s;
+  border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s ease;
   user-select: none; -webkit-user-select: none;
-  position: relative; overflow: hidden;
-  box-shadow: var(--surface-shadow);
+  box-shadow: var(--shadow-sm);
 }
-.step-card:hover { border-color: var(--border2); box-shadow: var(--surface-shadow-hover); }
+.step-card:hover { border-color: var(--border2); box-shadow: var(--shadow-md); }
 .step-card:active { transform: scale(0.985); }
 
 .step-card.completed {
-  background: var(--surface); border-color: var(--border);
-  opacity: 0.5;
+  background: var(--done-bg); border-color: var(--done-border);
+  opacity: 0.6; position: relative;
+}
+.step-card.completed::after {
+  content: ''; position: absolute; top: 50%; left: 0; right: 0;
+  height: 2px; background: var(--done-border); opacity: 0.6;
 }
 .step-card.completed .step-card-name,
 .step-card.completed .step-card-product {
-  text-decoration: line-through; text-decoration-color: var(--text4);
+  text-decoration: line-through; text-decoration-color: var(--am);
+  text-decoration-thickness: 2px;
 }
+.step-card.completed .step-icon { opacity: 0.5; }
+.step-card.completed .step-num { opacity: 0.4; }
 
 .step-check {
-  width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+  width: 24px; height: 24px; border-radius: var(--radius-sm); flex-shrink: 0;
   border: 2px solid var(--border2); display: flex; align-items: center;
-  justify-content: center; transition: all 0.25s; font-size: 14px;
+  justify-content: center; transition: all 0.2s ease;
 }
+.step-check svg { width: 14px; height: 14px; opacity: 0; transition: opacity 0.2s; }
 .step-card.completed .step-check {
-  background: var(--green-bg); border-color: var(--green); color: var(--green);
+  background: var(--am); border-color: var(--am); color: #fff;
 }
+.step-card.completed .step-check svg { opacity: 1; }
 
 .step-icon {
-  width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+  width: 36px; height: 36px; border-radius: var(--radius-sm); flex-shrink: 0;
   background: var(--surface2); display: flex; align-items: center;
-  justify-content: center; font-size: 16px;
+  justify-content: center; font-size: 17px;
 }
 
 .step-info { flex: 1; min-width: 0; }
-.step-card-name { font-size: 11px; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 2px; }
+.step-card-name {
+  font-size: 10px; font-weight: 600; color: var(--text3); text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 2px;
+}
 .step-card-product { font-size: 14px; color: var(--text); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .step-num {
-  font-size: 11px; color: var(--text4); font-weight: 600; letter-spacing: 0.5px;
+  font-size: 10px; color: var(--text4); font-weight: 600; font-variant-numeric: tabular-nums;
 }
 
 .section-label {
   font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--text3); margin: 28px 0 12px; padding-left: 4px;
+  color: var(--text3); margin: 32px 0 12px; display: flex; align-items: center; gap: 8px;
 }
+.section-label svg { width: 14px; height: 14px; }
 
 .all-done {
-  text-align: center; padding: 48px 20px; animation: fadeIn 0.5s;
+  text-align: center; padding: 56px 20px; animation: fadeIn 0.5s;
 }
-.all-done-emoji { font-size: 48px; margin-bottom: 12px; }
+.all-done-icon { margin-bottom: 16px; font-size: 48px; }
 .all-done-text {
-  font-family: var(--display); font-size: 22px; font-weight: 600; color: var(--text);
+  font-family: var(--display); font-size: 24px; font-weight: 600; color: var(--heading);
 }
 .all-done-sub { font-size: 14px; color: var(--text3); margin-top: 8px; }
 
+/* ═══════════════════════════════════════════
+   ADMIN PAGE
+   ═══════════════════════════════════════════ */
 .admin-page {
-  max-width: 800px; margin: 0 auto; padding: 24px 20px 64px;
+  max-width: 720px; margin: 0 auto; padding: 32px 24px 80px;
 }
 
 .admin-header {
   display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 28px; gap: 16px;
+  margin-bottom: 32px; gap: 16px;
 }
 .admin-title {
-  font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--text);
+  font-family: var(--display); font-size: 28px; font-weight: 600; color: var(--heading);
 }
+.admin-header-actions { display: flex; gap: 8px; align-items: center; }
+
 .back-btn {
-  display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+  display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;
   color: var(--text3); cursor: pointer; background: var(--surface); border: 1px solid var(--border);
-  padding: 8px 16px; border-radius: 10px; transition: all 0.2s; box-shadow: var(--surface-shadow);
+  padding: 8px 16px; border-radius: var(--radius-sm); transition: all 0.2s; box-shadow: var(--shadow-sm);
+  font-family: var(--font);
 }
-.back-btn:hover { color: var(--text2); border-color: var(--border2); background: var(--surface); box-shadow: var(--surface-shadow-hover); }
+.back-btn svg { width: 14px; height: 14px; }
+.back-btn:hover { color: var(--text2); border-color: var(--border2); box-shadow: var(--shadow-md); }
 .back-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .admin-tabs {
-  display: flex; gap: 4px; margin-bottom: 28px; background: var(--surface);
-  border-radius: 12px; padding: 4px; border: 1px solid var(--border);
-  box-shadow: var(--surface-shadow);
+  display: flex; gap: 2px; margin-bottom: 32px; background: var(--surface2);
+  border-radius: var(--radius-md); padding: 3px;
 }
 .admin-tab {
   flex: 1; padding: 10px 16px; border-radius: 10px; border: none;
   background: transparent; color: var(--text3); font-size: 13px; font-weight: 600;
   cursor: pointer; transition: all 0.2s; font-family: var(--font);
 }
-.admin-tab.active { background: var(--surface2); color: var(--text); }
+.admin-tab.active { background: var(--surface); color: var(--text); box-shadow: var(--shadow-sm); }
 .admin-tab:hover:not(.active) { color: var(--text2); }
 
 .add-product-form {
   display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;
 }
 .input {
-  flex: 1; min-width: 180px; padding: 10px 14px; border-radius: 10px;
+  flex: 1; min-width: 180px; padding: 10px 14px; border-radius: var(--radius-sm);
   border: 1px solid var(--border); background: var(--surface);
   color: var(--text); font-size: 14px; font-family: var(--font);
-  outline: none; transition: border-color 0.2s;
+  outline: none; transition: all 0.2s;
 }
-.input:focus { border-color: var(--accent); }
+.input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
 .input::placeholder { color: var(--text4); }
 
 .select {
-  padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border);
+  padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border);
   background: var(--surface); color: var(--text); font-size: 14px;
   font-family: var(--font); outline: none; cursor: pointer; min-width: 140px;
   appearance: none; -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a8279' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239a8a7e' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 12px center;
-  padding-right: 32px;
+  padding-right: 32px; transition: all 0.2s;
 }
-.select:focus { border-color: var(--accent); }
+.select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
 
 .btn {
-  padding: 10px 20px; border-radius: 10px; border: none; font-size: 13px;
+  padding: 10px 20px; border-radius: var(--radius-sm); border: none; font-size: 13px;
   font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: var(--font);
   display: inline-flex; align-items: center; gap: 6px;
 }
+.btn:active { transform: scale(0.97); }
 .btn-primary { background: var(--accent); color: #fff; }
-.dark .btn-primary { color: #0c0a0e; }
-.btn-primary:hover { background: var(--accent-hover); }
+.btn-primary:hover { background: var(--accent-hover); box-shadow: var(--shadow-md); }
 .btn-ghost { background: transparent; color: var(--text3); border: 1px solid var(--border); }
-.btn-ghost:hover { border-color: var(--border2); color: var(--text2); background: var(--surface); }
+.btn-ghost:hover { border-color: var(--border2); color: var(--text2); background: var(--surface2); }
 .btn-danger { background: var(--danger-bg); color: var(--danger); }
 .btn-danger:hover { filter: brightness(1.1); }
 .btn-sm { padding: 6px 12px; font-size: 12px; }
 
-.product-list { display: flex; flex-direction: column; gap: 6px; }
+.product-list { display: flex; flex-direction: column; gap: 4px; }
 
 .product-row {
   display: flex; align-items: center; gap: 12px; padding: 12px 16px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-  transition: all 0.2s; box-shadow: var(--surface-shadow);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  transition: all 0.2s; box-shadow: var(--shadow-sm);
 }
-.product-row:hover { border-color: var(--border2); box-shadow: var(--surface-shadow-hover); }
+.product-row:hover { border-color: var(--border2); box-shadow: var(--shadow-md); }
 .product-row-icon {
-  width: 32px; height: 32px; border-radius: 8px; background: var(--surface2);
-  display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0;
+  width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--surface2);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 15px;
 }
 .product-row-info { flex: 1; min-width: 0; }
 .product-row-name { font-size: 14px; font-weight: 500; color: var(--text); }
 .product-row-cat {
-  font-size: 11px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px;
+  font-size: 10px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.8px;
 }
 .product-row-actions { display: flex; gap: 4px; }
 
 .del-btn {
-  width: 30px; height: 30px; border-radius: 8px; border: 1px solid transparent;
-  background: transparent; color: var(--text4); cursor: pointer; font-size: 14px;
+  width: 30px; height: 30px; border-radius: var(--radius-sm); border: 1px solid transparent;
+  background: transparent; color: var(--text4); cursor: pointer;
   display: flex; align-items: center; justify-content: center; transition: all 0.2s;
 }
-.del-btn:hover { background: var(--danger-bg); color: var(--danger); border-color: var(--danger-bg); }
+.del-btn svg { width: 14px; height: 14px; }
+.del-btn:hover { background: var(--danger-bg); color: var(--danger); }
 
 .day-tabs {
   display: flex; gap: 4px; margin-bottom: 20px; overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
 }
+.day-tabs::-webkit-scrollbar { display: none; }
 .day-tab {
-  padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border);
+  padding: 8px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border);
   background: var(--surface); color: var(--text3); font-size: 12px; font-weight: 600;
   cursor: pointer; transition: all 0.2s; white-space: nowrap; font-family: var(--font);
 }
 .day-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.dark .day-tab.active { color: #0c0a0e; }
 .day-tab:hover:not(.active) { border-color: var(--border2); color: var(--text2); }
 
 .schedule-cols {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
 }
 @media (max-width: 600px) { .schedule-cols { grid-template-columns: 1fr; } }
 
 .schedule-col {
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; padding: 16px; position: relative; overflow: hidden;
-  box-shadow: var(--surface-shadow);
+  border-radius: var(--radius-lg); padding: 16px; position: relative; overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 .schedule-col::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
 }
-.schedule-col-am::before { background: linear-gradient(90deg, var(--green), #5a8a4e); }
-.schedule-col-pm::before { background: linear-gradient(90deg, var(--purple), #8a5a9e); }
+.schedule-col-am::before { background: linear-gradient(90deg, var(--am), #22c55e); }
+.schedule-col-pm::before { background: linear-gradient(90deg, var(--pm), #a855f7); }
 
 .schedule-col-title {
   font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-  margin-bottom: 12px; padding-top: 4px;
+  margin-bottom: 12px; padding-top: 4px; display: flex; align-items: center; gap: 6px;
 }
-.schedule-col-am .schedule-col-title { color: var(--green); }
-.schedule-col-pm .schedule-col-title { color: var(--purple); }
+.schedule-col-title svg { width: 14px; height: 14px; }
+.schedule-col-am .schedule-col-title { color: var(--am); }
+.schedule-col-pm .schedule-col-title { color: var(--pm); }
 
 .schedule-step {
   display: flex; align-items: center; gap: 10px; padding: 8px 0;
@@ -358,9 +411,10 @@ html, body {
 .schedule-step-actions { display: flex; gap: 2px; }
 .move-btn {
   width: 26px; height: 26px; border-radius: 6px; border: none;
-  background: transparent; color: var(--text4); cursor: pointer; font-size: 12px;
+  background: transparent; color: var(--text4); cursor: pointer;
   display: flex; align-items: center; justify-content: center; transition: all 0.15s;
 }
+.move-btn svg { width: 12px; height: 12px; }
 .move-btn:hover { background: var(--surface2); color: var(--text2); }
 
 .add-step-area { margin-top: 10px; display: flex; gap: 6px; }
@@ -371,7 +425,7 @@ html, body {
 .tags-row { display: flex; flex-wrap: wrap; gap: 6px; }
 
 .tag-toggle {
-  font-size: 10px; font-weight: 700; padding: 5px 12px; border-radius: 20px;
+  font-size: 10px; font-weight: 700; padding: 5px 12px; border-radius: 100px;
   letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer;
   border: 1px solid var(--border); background: var(--surface); color: var(--text3);
   transition: all 0.2s; font-family: var(--font);
@@ -387,19 +441,19 @@ html, body {
 .settings-section { margin-bottom: 32px; }
 .settings-label { font-size: 13px; font-weight: 600; color: var(--text2); margin-bottom: 12px; }
 .textarea {
-  width: 100%; padding: 10px 14px; border-radius: 10px;
+  width: 100%; padding: 10px 14px; border-radius: var(--radius-sm);
   border: 1px solid var(--border); background: var(--surface);
   color: var(--text); font-size: 14px; font-family: var(--font);
-  outline: none; resize: vertical; min-height: 70px; line-height: 1.5;
+  outline: none; resize: vertical; min-height: 70px; line-height: 1.5; transition: all 0.2s;
 }
-.textarea:focus { border-color: var(--accent); }
+.textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
 
 .export-box {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
   padding: 16px; margin-bottom: 12px;
 }
 .export-code {
-  font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 11px;
   color: var(--text3); word-break: break-all; max-height: 120px; overflow-y: auto;
   line-height: 1.6;
 }
@@ -411,22 +465,15 @@ html, body {
 /* ═══════════════════════════════════════════
    THEME TOGGLE
    ═══════════════════════════════════════════ */
-.theme-toggle {
-  position: relative; overflow: hidden;
-}
-.theme-toggle svg {
-  width: 18px; height: 18px; transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.theme-toggle .sun-icon { position: absolute; }
-.theme-toggle .moon-icon { position: absolute; }
-
-/* Theme indicator dot */
 .theme-auto-dot {
-  position: absolute; bottom: 3px; right: 3px; width: 6px; height: 6px;
-  border-radius: 50%; background: var(--green); border: 1px solid var(--surface);
+  position: absolute; bottom: 2px; right: 2px; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--am); border: 1.5px solid var(--surface);
 }
 
-@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════ */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 .fade-in { animation: fadeIn 0.4s ease-out both; }
 .fd1 { animation-delay: 0.05s; }
 .fd2 { animation-delay: 0.1s; }
@@ -438,29 +485,30 @@ html, body {
 }
 .check-pop { animation: checkPop 0.3s ease-out; }
 
+@keyframes sparkle {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.6; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
 @media (max-width: 500px) {
-  .display-day { font-size: 32px; }
-  .affirmation { font-size: 15px; }
-  .admin-title { font-size: 22px; }
+  .display-page { padding: 28px 20px 48px; }
+  .display-day { font-size: 34px; }
+  .affirmation { font-size: 16px; }
+  .admin-title { font-size: 24px; }
 }
   </style>
   <script>
-    // Apply theme immediately to prevent flash
     (function() {
       var saved = localStorage.getItem('skincare-theme');
       var isDark;
       if (saved === 'dark') isDark = true;
       else if (saved === 'light') isDark = false;
-      else {
-        var h = new Date().getHours();
-        isDark = h < 6 || h >= 19;
-      }
+      else { var h = new Date().getHours(); isDark = h < 6 || h >= 19; }
       if (isDark) document.documentElement.classList.add('dark');
-      document.querySelector('meta[name="theme-color"]').content = isDark ? '#0c0a0e' : '#f8f5f0';
+      document.querySelector('meta[name="theme-color"]').content = isDark ? '#0e0b0d' : '#faf7f4';
     })();
   </script>
 </head>
@@ -468,6 +516,37 @@ html, body {
   <div id="root"></div>
   <script type="text/babel">
 const { useState, useEffect, useCallback } = React;
+
+/* ═══════════════════════════════════════════
+   SVG ICONS (Lucide-style, 24x24 viewBox)
+   ═══════════════════════════════════════════ */
+
+const I = {
+  sun: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>,
+  moon: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>,
+  settings: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>,
+  expand: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>,
+  check: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" {...p}><polyline points="20 6 9 17 4 12"/></svg>,
+  x: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>,
+  arrowLeft: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>,
+  arrowUp: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>,
+  arrowDown: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>,
+  plus: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>,
+  sparkles: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M18 14l1 3 3 1-3 1-1 3-1-3-3-1 3-1z"/></svg>,
+  // Category icons
+  droplet: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>,
+  sparkle: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg>,
+  flask: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M9 3h6"/><path d="M10 3v6.5L4 18a1 1 0 0 0 .87 1.5h14.26A1 1 0 0 0 20 18l-6-8.5V3"/></svg>,
+  eye: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>,
+  droplets: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 14.1c1.56 0 2.83-1.29 2.83-2.86 0-.82-.4-1.6-1.21-2.26-.81-.65-1.4-1.4-1.62-2.28-.22 1.02-.8 2-1.62 2.66-.81.66-1.21 1.44-1.21 2.26 0 1.57 1.27 2.86 2.83 2.86z" transform="translate(4.5 -1.5)"/></svg>,
+  sunIcon: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>,
+  pill: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M10.5 1.5L3 9a5.66 5.66 0 0 0 8 8l7.5-7.5a5.66 5.66 0 0 0-8-8z"/><line x1="7" y1="13" x2="13" y2="7" strokeOpacity="0.5"/></svg>,
+};
+
+const categoryIcons = {
+  Cleanser: "🧴", Exfoliant: "🧼", Serum: "🍊",
+  "Eye Cream": "👁️", Moisturizer: "💧", Sunscreen: "☀️", Treatment: "💊",
+};
 
 /* ═══════════════════════════════════════════
    DEFAULT DATA
@@ -513,18 +592,16 @@ const DAY_ORDER = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
 const CATEGORIES = ["Cleanser","Exfoliant","Serum","Eye Cream","Moisturizer","Sunscreen","Treatment"];
 const TAG_OPTIONS = ["Retinoid Night","Exfoliation Day","Rest Night","Mask Night","Active Night","Recovery Day"];
 
-const categoryIcons = { Cleanser:"🧴", Exfoliant:"🧼", Serum:"🍊", "Eye Cream":"👁️", Moisturizer:"💧", Sunscreen:"☀️", Treatment:"💊" };
 const tagColors = {
-  "Retinoid Night":{bg:"#3b1f5e",text:"#d4b5ff"}, "Exfoliation Day":{bg:"#1a3a2a",text:"#7ddeaa"},
-  "Rest Night":{bg:"#3a2a1a",text:"#deb87d"}, "Mask Night":{bg:"#1a2a3a",text:"#7db8de"},
-  "Active Night":{bg:"#3a1a2a",text:"#de7db8"}, "Recovery Day":{bg:"#2a3a1a",text:"#b8de7d"},
+  "Retinoid Night":{bg:"#ede9fe",text:"#7c3aed"}, "Exfoliation Day":{bg:"#dcfce7",text:"#16a34a"},
+  "Rest Night":{bg:"#fef3c7",text:"#d97706"}, "Mask Night":{bg:"#dbeafe",text:"#2563eb"},
+  "Active Night":{bg:"#fce7f3",text:"#db2777"}, "Recovery Day":{bg:"#d1fae5",text:"#059669"},
 };
-const tagColorsLight = {
-  "Retinoid Night":{bg:"#f0e8f8",text:"#6b3fa0"}, "Exfoliation Day":{bg:"#e8f5e4",text:"#2d6623"},
-  "Rest Night":{bg:"#faf0e4",text:"#8a6530"}, "Mask Night":{bg:"#e4eef8",text:"#2d5080"},
-  "Active Night":{bg:"#f8e4ee",text:"#802d5a"}, "Recovery Day":{bg:"#eef8e4",text:"#508a2d"},
+const tagColorsDark = {
+  "Retinoid Night":{bg:"#2e1065",text:"#c4b5fd"}, "Exfoliation Day":{bg:"#052e16",text:"#4ade80"},
+  "Rest Night":{bg:"#451a03",text:"#fbbf24"}, "Mask Night":{bg:"#172554",text:"#60a5fa"},
+  "Active Night":{bg:"#500724",text:"#f472b6"}, "Recovery Day":{bg:"#022c22",text:"#34d399"},
 };
-const categoryColors = { Cleanser:"#7ddeaa", Exfoliant:"#deb87d", Serum:"#de7db8", "Eye Cream":"#7db8de", Moisturizer:"#7d9ede", Sunscreen:"#ded87d", Treatment:"#d4b5ff" };
 
 /* ═══════════════════════════════════════════
    THEME
@@ -548,48 +625,8 @@ function applyTheme(theme) {
   if (theme === "dark") html.classList.add("dark");
   else html.classList.remove("dark");
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.content = theme === "dark" ? "#0c0a0e" : "#f8f5f0";
+  if (meta) meta.content = theme === "dark" ? "#0e0b0d" : "#faf7f4";
 }
-
-/* ═══════════════════════════════════════════
-   SVG ICONS
-   ═══════════════════════════════════════════ */
-
-const SunIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="5"/>
-    <line x1="12" y1="1" x2="12" y2="3"/>
-    <line x1="12" y1="21" x2="12" y2="23"/>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-    <line x1="1" y1="12" x2="3" y2="12"/>
-    <line x1="21" y1="12" x2="23" y2="12"/>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-  </svg>
-);
-
-const MoonIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-  </svg>
-);
-
-const SettingsIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{width:16,height:16}}>
-    <circle cx="12" cy="12" r="3"/>
-    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-  </svg>
-);
-
-const ExpandIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{width:16,height:16}}>
-    <polyline points="15 3 21 3 21 9"/>
-    <polyline points="9 21 3 21 3 15"/>
-    <line x1="21" y1="3" x2="14" y2="10"/>
-    <line x1="3" y1="21" x2="10" y2="14"/>
-  </svg>
-);
 
 /* ═══════════════════════════════════════════
    STORAGE
@@ -620,46 +657,30 @@ function App() {
   const [newProdCat, setNewProdCat] = useState("Cleanser");
   const [importText, setImportText] = useState("");
 
-  // Theme state
   const [themeState, setThemeState] = useState(getInitialTheme);
-
   const isDark = themeState.theme === "dark";
 
-  // Apply theme whenever it changes
   useEffect(() => { applyTheme(themeState.theme); }, [themeState.theme]);
 
-  // Auto-update theme if in auto mode (check every minute)
   useEffect(() => {
     if (!themeState.isAuto) return;
     const interval = setInterval(() => {
-      const autoTheme = getAutoTheme();
-      setThemeState(prev => prev.isAuto ? { theme: autoTheme, isAuto: true } : prev);
+      setThemeState(prev => prev.isAuto ? { theme: getAutoTheme(), isAuto: true } : prev);
     }, 60000);
     return () => clearInterval(interval);
   }, [themeState.isAuto]);
 
   const cycleTheme = () => {
     setThemeState(prev => {
-      // Cycle: auto -> light -> dark -> auto
-      if (prev.isAuto) {
-        const next = "light";
-        localStorage.setItem(THEME_KEY, next);
-        return { theme: next, isAuto: false };
-      } else if (prev.theme === "light") {
-        localStorage.setItem(THEME_KEY, "dark");
-        return { theme: "dark", isAuto: false };
-      } else {
-        localStorage.removeItem(THEME_KEY);
-        return { theme: getAutoTheme(), isAuto: true };
-      }
+      if (prev.isAuto) { localStorage.setItem(THEME_KEY, "light"); return { theme: "light", isAuto: false }; }
+      if (prev.theme === "light") { localStorage.setItem(THEME_KEY, "dark"); return { theme: "dark", isAuto: false }; }
+      localStorage.removeItem(THEME_KEY); return { theme: getAutoTheme(), isAuto: true };
     });
   };
 
-  // Get tag colors based on theme
-  const getTagColor = (tag) => {
-    if (isDark) return tagColors[tag] || { bg: "#222", text: "#aaa" };
-    return tagColorsLight[tag] || { bg: "#f0f0f0", text: "#555" };
-  };
+  const getTagColor = (tag) => isDark ? (tagColorsDark[tag] || {bg:"#222",text:"#aaa"}) : (tagColors[tag] || {bg:"#f0f0f0",text:"#555"});
+
+  const catEmoji = (category) => categoryIcons[category] || "•";
 
   useEffect(() => { const t = setInterval(() => setNow(new Date()), 30000); return () => clearInterval(t); }, []);
 
@@ -768,16 +789,12 @@ function App() {
     else document.exitFullscreen?.();
   };
 
-  // Theme toggle button
   const ThemeToggle = () => (
-    <button
-      className="icon-btn theme-toggle"
-      onClick={cycleTheme}
-      title={themeState.isAuto ? "Theme: Auto (click to switch)" : `Theme: ${themeState.theme} (click to switch)`}
-      aria-label={`Current theme: ${themeState.isAuto ? 'auto' : themeState.theme}. Click to cycle.`}
-    >
-      {isDark ? <MoonIcon /> : <SunIcon />}
-      {themeState.isAuto && <span className="theme-auto-dot" title="Auto mode" />}
+    <button className="icon-btn" onClick={cycleTheme}
+      title={themeState.isAuto ? "Theme: Auto" : `Theme: ${themeState.theme}`}
+      aria-label={`Theme: ${themeState.isAuto ? 'auto' : themeState.theme}. Click to cycle.`}>
+      {isDark ? <I.moon /> : <I.sun />}
+      {themeState.isAuto && <span className="theme-auto-dot" />}
     </button>
   );
 
@@ -785,7 +802,7 @@ function App() {
     return (
       <div className="loading-screen">
         <div className="loading-spinner" />
-        <span style={{ color: "var(--text3)", fontSize: 13 }}>Loading your routine...</span>
+        <span className="loading-text">Loading your routine...</span>
       </div>
     );
   }
@@ -807,12 +824,8 @@ function App() {
           <div className="display-day">{todayName}</div>
           <div className="display-controls">
             <ThemeToggle />
-            <button className="icon-btn" onClick={toggleFullscreen} title="Fullscreen" aria-label="Toggle fullscreen">
-              <ExpandIcon />
-            </button>
-            <button className="icon-btn" onClick={() => setView("admin")} title="Settings" aria-label="Open settings">
-              <SettingsIcon />
-            </button>
+            <button className="icon-btn" onClick={toggleFullscreen} aria-label="Toggle fullscreen"><I.expand /></button>
+            <button className="icon-btn" onClick={() => setView("admin")} aria-label="Open settings"><I.settings /></button>
           </div>
         </div>
         <div className="display-time fade-in fd1">{timeStr}</div>
@@ -826,22 +839,22 @@ function App() {
           })}
         </div>
         <div className="affirmation fade-in fd2">"{affirmations[todayName] || ""}"</div>
-        <div className="fade-in fd3">
+        <div className="progress-wrap fade-in fd3">
           <div className="progress-label">{allDone ? "All done!" : `${totalDone} of ${totalSteps} steps complete`}</div>
-          <div className="progress-bar-wrap">
+          <div className="progress-bar-track">
             <div className="progress-bar-fill" style={{ width: `${totalSteps ? (totalDone / totalSteps) * 100 : 0}%` }} />
           </div>
         </div>
 
         {allDone ? (
           <div className="all-done fade-in fd4">
-            <div className="all-done-emoji">✨</div>
+            <div className="all-done-icon">✨</div>
             <div className="all-done-text">Routine complete</div>
             <div className="all-done-sub">That discipline is rare. See you next routine.</div>
           </div>
         ) : (
           <>
-            <div className="section-label fade-in fd3" style={{ color: isAM ? "var(--green)" : "var(--purple)" }}>
+            <div className="section-label fade-in fd3" style={{ color: isAM ? "var(--am)" : "var(--pm)" }}>
               {isAM ? "☀️ Morning — Now" : "🌙 Evening — Now"}
             </div>
             {currentSteps.map((pid, i) => {
@@ -853,19 +866,19 @@ function App() {
                 <div key={key} className={`step-card fade-in ${done ? "completed" : ""}`}
                   style={{ animationDelay: `${0.15 + i * 0.04}s` }}
                   onClick={() => toggleComplete(key)}>
-                  <div className={`step-check ${done ? "check-pop" : ""}`}>{done ? "✓" : ""}</div>
-                  <div className="step-icon">{categoryIcons[p.category] || "•"}</div>
+                  <div className={`step-check ${done ? "check-pop" : ""}`}><I.check /></div>
+                  <div className="step-icon">{catEmoji(p.category)}</div>
                   <div className="step-info">
                     <div className="step-card-name">{p.category}</div>
                     <div className="step-card-product">{p.name}</div>
                   </div>
-                  <div className="step-num">{i + 1}</div>
+                  <div className="step-num">{String(i + 1).padStart(2, '0')}</div>
                 </div>
               );
             })}
             {otherSteps.length > 0 && (
               <>
-                <div className="section-label fade-in" style={{ color: isAM ? "var(--purple)" : "var(--green)", animationDelay: "0.4s" }}>
+                <div className="section-label fade-in" style={{ color: isAM ? "var(--pm)" : "var(--am)", animationDelay: "0.4s" }}>
                   {isAM ? "🌙 Evening — Later" : "☀️ Morning — Done"}
                 </div>
                 {otherSteps.map((pid, i) => {
@@ -877,13 +890,13 @@ function App() {
                     <div key={key} className={`step-card fade-in ${done ? "completed" : ""}`}
                       style={{ animationDelay: `${0.45 + i * 0.04}s`, opacity: isAM ? 0.4 : 1 }}
                       onClick={() => toggleComplete(key)}>
-                      <div className={`step-check ${done ? "check-pop" : ""}`}>{done ? "✓" : ""}</div>
-                      <div className="step-icon">{categoryIcons[p.category] || "•"}</div>
+                      <div className={`step-check ${done ? "check-pop" : ""}`}><I.check /></div>
+                      <div className="step-icon">{catEmoji(p.category)}</div>
                       <div className="step-info">
                         <div className="step-card-name">{p.category}</div>
                         <div className="step-card-product">{p.name}</div>
                       </div>
-                      <div className="step-num">{i + 1}</div>
+                      <div className="step-num">{String(i + 1).padStart(2, '0')}</div>
                     </div>
                   );
                 })}
@@ -900,9 +913,11 @@ function App() {
     <div className="admin-page">
       <div className="admin-header fade-in">
         <div className="admin-title">Manage Routine</div>
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <div className="admin-header-actions">
           <ThemeToggle />
-          <button className="back-btn" onClick={() => setView("display")}>← Display</button>
+          <button className="back-btn" onClick={() => setView("display")}>
+            <I.arrowLeft /> Display
+          </button>
         </div>
       </div>
 
@@ -910,7 +925,7 @@ function App() {
         {["schedule","products","settings"].map(tab => (
           <button key={tab} className={`admin-tab ${adminTab === tab ? "active" : ""}`}
             onClick={() => setAdminTab(tab)}>
-            {tab === "schedule" ? "Schedule" : tab === "products" ? "Products" : "Settings"}
+            {tab === "schedule" ? "📅 Schedule" : tab === "products" ? "🧴 Products" : "⚙️ Settings"}
           </button>
         ))}
       </div>
@@ -924,18 +939,18 @@ function App() {
             <select className="select" value={newProdCat} onChange={e => setNewProdCat(e.target.value)}>
               {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
-            <button className="btn btn-primary" onClick={addProduct}>+ Add</button>
+            <button className="btn btn-primary" onClick={addProduct}><I.plus /> Add</button>
           </div>
           <div className="product-list">
             {products.map(p => (
               <div key={p.id} className="product-row">
-                <div className="product-row-icon">{categoryIcons[p.category] || "•"}</div>
+                <div className="product-row-icon">{catEmoji(p.category)}</div>
                 <div className="product-row-info">
                   <div className="product-row-name">{p.name}</div>
-                  <div className="product-row-cat" style={{ color: categoryColors[p.category] || "var(--text3)" }}>{p.category}</div>
+                  <div className="product-row-cat">{p.category}</div>
                 </div>
                 <div className="product-row-actions">
-                  <button className="del-btn" onClick={() => removeProduct(p.id)} title="Delete">✕</button>
+                  <button className="del-btn" onClick={() => removeProduct(p.id)} title="Delete"><I.x /></button>
                 </div>
               </div>
             ))}
@@ -960,21 +975,23 @@ function App() {
               const slots = routine[editDay]?.[period] || [];
               return (
                 <div key={period} className={`schedule-col schedule-col-${period}`}>
-                  <div className="schedule-col-title">{period === "am" ? "☀️ Morning" : "🌙 Evening"}</div>
+                  <div className="schedule-col-title">
+                    {period === "am" ? "☀️ Morning" : "🌙 Evening"}
+                  </div>
                   {slots.map((pid, i) => {
                     const p = getProduct(pid);
                     if (!p) return null;
                     return (
                       <div key={`${pid}-${i}`} className="schedule-step">
-                        <span style={{ fontSize: 14 }}>{categoryIcons[p.category] || "•"}</span>
+                        <span style={{ fontSize: 14 }}>{catEmoji(p.category)}</span>
                         <div className="schedule-step-info">
                           <div className="schedule-step-cat">{p.category}</div>
                           <div className="schedule-step-name">{p.name}</div>
                         </div>
                         <div className="schedule-step-actions">
-                          <button className="move-btn" onClick={() => moveInSlot(editDay, period, i, -1)} disabled={i === 0}>↑</button>
-                          <button className="move-btn" onClick={() => moveInSlot(editDay, period, i, 1)} disabled={i === slots.length - 1}>↓</button>
-                          <button className="del-btn" style={{ width: 26, height: 26, fontSize: 11 }} onClick={() => removeFromSlot(editDay, period, i)}>✕</button>
+                          <button className="move-btn" onClick={() => moveInSlot(editDay, period, i, -1)} disabled={i === 0}><I.arrowUp /></button>
+                          <button className="move-btn" onClick={() => moveInSlot(editDay, period, i, 1)} disabled={i === slots.length - 1}><I.arrowDown /></button>
+                          <button className="del-btn" style={{ width: 26, height: 26 }} onClick={() => removeFromSlot(editDay, period, i)}><I.x /></button>
                         </div>
                       </div>
                     );
@@ -983,12 +1000,12 @@ function App() {
                   <div className="add-step-area">
                     <select className="select" id={`add-${period}`} defaultValue="">
                       <option value="" disabled>Add product...</option>
-                      {products.map(p => <option key={p.id} value={p.id}>{categoryIcons[p.category]} {p.name}</option>)}
+                      {products.map(p => <option key={p.id} value={p.id}>{catEmoji(p.category)} {p.name}</option>)}
                     </select>
                     <button className="btn btn-ghost btn-sm" onClick={() => {
                       const sel = document.getElementById(`add-${period}`);
                       if (sel.value) { addToSlot(editDay, period, sel.value); sel.value = ""; }
-                    }}>+</button>
+                    }}><I.plus /></button>
                   </div>
                 </div>
               );
@@ -1030,7 +1047,7 @@ function App() {
             <div className="settings-label">Daily Affirmations</div>
             {DAY_ORDER.map(day => (
               <div key={day} style={{ marginBottom: 10 }}>
-                <div style={{ fontSize: 11, color: "var(--text3)", fontWeight: 600, marginBottom: 4, textTransform: "uppercase", letterSpacing: 0.5 }}>{day}</div>
+                <div style={{ fontSize: 10, color: "var(--text3)", fontWeight: 600, marginBottom: 4, textTransform: "uppercase", letterSpacing: 1 }}>{day}</div>
                 <textarea className="textarea" rows={2} value={affirmations[day] || ""}
                   onChange={e => setAffirmations(prev => ({ ...prev, [day]: e.target.value }))} />
               </div>
@@ -1039,14 +1056,14 @@ function App() {
 
           <div className="settings-section">
             <div className="settings-label">Export Routine</div>
-            <p style={{ fontSize: 13, color: "var(--text3)", marginBottom: 12 }}>Copy this JSON to back up your routine or transfer it to another device.</p>
+            <p style={{ fontSize: 13, color: "var(--text3)", marginBottom: 12, lineHeight: 1.5 }}>Copy this JSON to back up your routine or transfer it to another device.</p>
             <div className="export-box"><div className="export-code">{exportData()}</div></div>
             <button className="btn btn-ghost btn-sm" onClick={() => { navigator.clipboard?.writeText(exportData()); alert("Copied to clipboard!"); }}>Copy to Clipboard</button>
           </div>
 
           <div className="settings-section">
             <div className="settings-label">Import Routine</div>
-            <p style={{ fontSize: 13, color: "var(--text3)", marginBottom: 12 }}>Paste previously exported JSON to restore a routine.</p>
+            <p style={{ fontSize: 13, color: "var(--text3)", marginBottom: 12, lineHeight: 1.5 }}>Paste previously exported JSON to restore a routine.</p>
             <textarea className="textarea" rows={4} placeholder="Paste your JSON here..."
               value={importText} onChange={e => setImportText(e.target.value)} />
             <button className="btn btn-primary" style={{ marginTop: 8 }} onClick={importDataFn} disabled={!importText.trim()}>Import</button>
