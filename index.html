@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="theme-color" content="#0a0a0c" />
+  <meta name="theme-color" content="#f8f5f0" />
   <title>Skincare Routine</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧴</text></svg>" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
@@ -17,28 +17,68 @@
   <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
+/* ═══════════════════════════════════════════
+   LIGHT MODE (default)
+   ═══════════════════════════════════════════ */
 :root {
-  --bg: #0a0a0c;
-  --surface: #111114;
-  --surface2: #18181c;
-  --border: #1e1e24;
-  --border2: #2a2a32;
-  --text: #e8e4df;
-  --text2: #a09a92;
-  --text3: #6a6560;
-  --text4: #3a3630;
-  --green: #a8d89a;
-  --green-bg: #1a2e1a;
-  --purple: #d4b5ff;
-  --purple-bg: #2a1a2e;
-  --accent: #d4b5ff;
-  --danger: #ff6b6b;
-  --danger-bg: #2e1a1a;
+  --bg: #f8f5f0;
+  --surface: #ffffff;
+  --surface2: #f0ece6;
+  --border: #e4dfd8;
+  --border2: #d4cec6;
+  --text: #1a1612;
+  --text2: #5c554c;
+  --text3: #8a8279;
+  --text4: #c0b9b0;
+  --green: #4a8c3f;
+  --green-bg: #e8f5e4;
+  --green-text: #2d6623;
+  --purple: #7c5aab;
+  --purple-bg: #f0e8f8;
+  --purple-text: #5a3d80;
+  --accent: #7c5aab;
+  --accent-hover: #6b4d96;
+  --danger: #c43e3e;
+  --danger-bg: #fce8e8;
+  --surface-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --surface-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
   --font: 'DM Sans', -apple-system, sans-serif;
   --display: 'Fraunces', Georgia, serif;
 }
 
-html, body { background: var(--bg); color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+/* ═══════════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════════ */
+.dark {
+  --bg: #0c0a0e;
+  --surface: #16131a;
+  --surface2: #1e1a24;
+  --border: #28232e;
+  --border2: #342e3c;
+  --text: #ede8e3;
+  --text2: #a8a0b0;
+  --text3: #6e6578;
+  --text4: #3e3648;
+  --green: #a8d89a;
+  --green-bg: #1a2e1a;
+  --green-text: #a8d89a;
+  --purple: #d4b5ff;
+  --purple-bg: #2a1a2e;
+  --purple-text: #d4b5ff;
+  --accent: #d4b5ff;
+  --accent-hover: #c5a0f0;
+  --danger: #ff6b6b;
+  --danger-bg: #2e1a1a;
+  --surface-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --surface-shadow-hover: 0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.dark { color-scheme: dark; }
+
+html, body {
+  background: var(--bg); color: var(--text); font-family: var(--font);
+  -webkit-font-smoothing: antialiased; transition: background 0.3s ease, color 0.3s ease;
+}
 
 .loading-screen {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -62,7 +102,7 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
 
 .display-day {
   font-family: var(--display); font-size: 42px; font-weight: 700;
-  color: #f5f0ea; letter-spacing: -1px; line-height: 1.1;
+  color: var(--text); letter-spacing: -1px; line-height: 1.1;
 }
 
 .display-controls { display: flex; gap: 8px; align-items: center; padding-top: 8px; }
@@ -71,9 +111,10 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
   width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border);
   background: var(--surface); color: var(--text3); cursor: pointer;
   display: flex; align-items: center; justify-content: center; font-size: 16px;
-  transition: all 0.2s;
+  transition: all 0.2s; box-shadow: var(--surface-shadow);
 }
-.icon-btn:hover { background: var(--surface2); color: var(--text2); border-color: var(--border2); }
+.icon-btn:hover { background: var(--surface2); color: var(--text2); border-color: var(--border2); box-shadow: var(--surface-shadow-hover); }
+.icon-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .display-time {
   font-size: 13px; font-weight: 500; color: var(--text3);
@@ -87,8 +128,8 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
   font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
   padding: 5px 14px; border-radius: 20px;
 }
-.period-am { background: var(--green-bg); color: var(--green); }
-.period-pm { background: var(--purple-bg); color: var(--purple); }
+.period-am { background: var(--green-bg); color: var(--green-text); }
+.period-pm { background: var(--purple-bg); color: var(--purple-text); }
 
 .tag {
   font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 20px;
@@ -122,8 +163,9 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
   border-radius: 12px; cursor: pointer; transition: all 0.25s;
   user-select: none; -webkit-user-select: none;
   position: relative; overflow: hidden;
+  box-shadow: var(--surface-shadow);
 }
-.step-card:hover { border-color: var(--border2); }
+.step-card:hover { border-color: var(--border2); box-shadow: var(--surface-shadow-hover); }
 .step-card:active { transform: scale(0.985); }
 
 .step-card.completed {
@@ -185,14 +227,16 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
 }
 .back-btn {
   display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
-  color: var(--text3); cursor: pointer; background: none; border: 1px solid var(--border);
-  padding: 8px 16px; border-radius: 10px; transition: all 0.2s;
+  color: var(--text3); cursor: pointer; background: var(--surface); border: 1px solid var(--border);
+  padding: 8px 16px; border-radius: 10px; transition: all 0.2s; box-shadow: var(--surface-shadow);
 }
-.back-btn:hover { color: var(--text2); border-color: var(--border2); background: var(--surface); }
+.back-btn:hover { color: var(--text2); border-color: var(--border2); background: var(--surface); box-shadow: var(--surface-shadow-hover); }
+.back-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .admin-tabs {
   display: flex; gap: 4px; margin-bottom: 28px; background: var(--surface);
   border-radius: 12px; padding: 4px; border: 1px solid var(--border);
+  box-shadow: var(--surface-shadow);
 }
 .admin-tab {
   flex: 1; padding: 10px 16px; border-radius: 10px; border: none;
@@ -219,7 +263,7 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
   background: var(--surface); color: var(--text); font-size: 14px;
   font-family: var(--font); outline: none; cursor: pointer; min-width: 140px;
   appearance: none; -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236a6560' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a8279' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 12px center;
   padding-right: 32px;
 }
@@ -230,12 +274,13 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
   font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: var(--font);
   display: inline-flex; align-items: center; gap: 6px;
 }
-.btn-primary { background: var(--accent); color: #0a0a0c; }
-.btn-primary:hover { filter: brightness(1.1); }
+.btn-primary { background: var(--accent); color: #fff; }
+.dark .btn-primary { color: #0c0a0e; }
+.btn-primary:hover { background: var(--accent-hover); }
 .btn-ghost { background: transparent; color: var(--text3); border: 1px solid var(--border); }
 .btn-ghost:hover { border-color: var(--border2); color: var(--text2); background: var(--surface); }
 .btn-danger { background: var(--danger-bg); color: var(--danger); }
-.btn-danger:hover { filter: brightness(1.2); }
+.btn-danger:hover { filter: brightness(1.1); }
 .btn-sm { padding: 6px 12px; font-size: 12px; }
 
 .product-list { display: flex; flex-direction: column; gap: 6px; }
@@ -243,9 +288,9 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
 .product-row {
   display: flex; align-items: center; gap: 12px; padding: 12px 16px;
   background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-  transition: all 0.2s;
+  transition: all 0.2s; box-shadow: var(--surface-shadow);
 }
-.product-row:hover { border-color: var(--border2); }
+.product-row:hover { border-color: var(--border2); box-shadow: var(--surface-shadow-hover); }
 .product-row-icon {
   width: 32px; height: 32px; border-radius: 8px; background: var(--surface2);
   display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0;
@@ -262,7 +307,7 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
   background: transparent; color: var(--text4); cursor: pointer; font-size: 14px;
   display: flex; align-items: center; justify-content: center; transition: all 0.2s;
 }
-.del-btn:hover { background: var(--danger-bg); color: var(--danger); border-color: #3e1a1a; }
+.del-btn:hover { background: var(--danger-bg); color: var(--danger); border-color: var(--danger-bg); }
 
 .day-tabs {
   display: flex; gap: 4px; margin-bottom: 20px; overflow-x: auto;
@@ -273,7 +318,8 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
   background: var(--surface); color: var(--text3); font-size: 12px; font-weight: 600;
   cursor: pointer; transition: all 0.2s; white-space: nowrap; font-family: var(--font);
 }
-.day-tab.active { background: var(--accent); color: #0a0a0c; border-color: var(--accent); }
+.day-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.dark .day-tab.active { color: #0c0a0e; }
 .day-tab:hover:not(.active) { border-color: var(--border2); color: var(--text2); }
 
 .schedule-cols {
@@ -284,12 +330,13 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
 .schedule-col {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 12px; padding: 16px; position: relative; overflow: hidden;
+  box-shadow: var(--surface-shadow);
 }
 .schedule-col::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
 }
-.schedule-col-am::before { background: linear-gradient(90deg, #a8d89a, #5a8a4e); }
-.schedule-col-pm::before { background: linear-gradient(90deg, #c89ad8, #8a5a9e); }
+.schedule-col-am::before { background: linear-gradient(90deg, var(--green), #5a8a4e); }
+.schedule-col-pm::before { background: linear-gradient(90deg, var(--purple), #8a5a9e); }
 
 .schedule-col-title {
   font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
@@ -361,6 +408,24 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
   text-align: center; padding: 32px; color: var(--text4); font-size: 14px;
 }
 
+/* ═══════════════════════════════════════════
+   THEME TOGGLE
+   ═══════════════════════════════════════════ */
+.theme-toggle {
+  position: relative; overflow: hidden;
+}
+.theme-toggle svg {
+  width: 18px; height: 18px; transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.theme-toggle .sun-icon { position: absolute; }
+.theme-toggle .moon-icon { position: absolute; }
+
+/* Theme indicator dot */
+.theme-auto-dot {
+  position: absolute; bottom: 3px; right: 3px; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--green); border: 1px solid var(--surface);
+}
+
 @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .fade-in { animation: fadeIn 0.4s ease-out both; }
 .fd1 { animation-delay: 0.05s; }
@@ -373,12 +438,31 @@ html, body { background: var(--bg); color: var(--text); font-family: var(--font)
 }
 .check-pop { animation: checkPop 0.3s ease-out; }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
 @media (max-width: 500px) {
   .display-day { font-size: 32px; }
   .affirmation { font-size: 15px; }
   .admin-title { font-size: 22px; }
 }
   </style>
+  <script>
+    // Apply theme immediately to prevent flash
+    (function() {
+      var saved = localStorage.getItem('skincare-theme');
+      var isDark;
+      if (saved === 'dark') isDark = true;
+      else if (saved === 'light') isDark = false;
+      else {
+        var h = new Date().getHours();
+        isDark = h < 6 || h >= 19;
+      }
+      if (isDark) document.documentElement.classList.add('dark');
+      document.querySelector('meta[name="theme-color"]').content = isDark ? '#0c0a0e' : '#f8f5f0';
+    })();
+  </script>
 </head>
 <body>
   <div id="root"></div>
@@ -435,7 +519,77 @@ const tagColors = {
   "Rest Night":{bg:"#3a2a1a",text:"#deb87d"}, "Mask Night":{bg:"#1a2a3a",text:"#7db8de"},
   "Active Night":{bg:"#3a1a2a",text:"#de7db8"}, "Recovery Day":{bg:"#2a3a1a",text:"#b8de7d"},
 };
+const tagColorsLight = {
+  "Retinoid Night":{bg:"#f0e8f8",text:"#6b3fa0"}, "Exfoliation Day":{bg:"#e8f5e4",text:"#2d6623"},
+  "Rest Night":{bg:"#faf0e4",text:"#8a6530"}, "Mask Night":{bg:"#e4eef8",text:"#2d5080"},
+  "Active Night":{bg:"#f8e4ee",text:"#802d5a"}, "Recovery Day":{bg:"#eef8e4",text:"#508a2d"},
+};
 const categoryColors = { Cleanser:"#7ddeaa", Exfoliant:"#deb87d", Serum:"#de7db8", "Eye Cream":"#7db8de", Moisturizer:"#7d9ede", Sunscreen:"#ded87d", Treatment:"#d4b5ff" };
+
+/* ═══════════════════════════════════════════
+   THEME
+   ═══════════════════════════════════════════ */
+
+const THEME_KEY = "skincare-theme";
+
+function getAutoTheme() {
+  const h = new Date().getHours();
+  return (h < 6 || h >= 19) ? "dark" : "light";
+}
+
+function getInitialTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === "dark" || saved === "light") return { theme: saved, isAuto: false };
+  return { theme: getAutoTheme(), isAuto: true };
+}
+
+function applyTheme(theme) {
+  const html = document.documentElement;
+  if (theme === "dark") html.classList.add("dark");
+  else html.classList.remove("dark");
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = theme === "dark" ? "#0c0a0e" : "#f8f5f0";
+}
+
+/* ═══════════════════════════════════════════
+   SVG ICONS
+   ═══════════════════════════════════════════ */
+
+const SunIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1" x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1" y1="12" x2="3" y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  </svg>
+);
+
+const MoonIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+);
+
+const SettingsIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{width:16,height:16}}>
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+  </svg>
+);
+
+const ExpandIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{width:16,height:16}}>
+    <polyline points="15 3 21 3 21 9"/>
+    <polyline points="9 21 3 21 3 15"/>
+    <line x1="21" y1="3" x2="14" y2="10"/>
+    <line x1="3" y1="21" x2="10" y2="14"/>
+  </svg>
+);
 
 /* ═══════════════════════════════════════════
    STORAGE
@@ -465,6 +619,47 @@ function App() {
   const [newProdName, setNewProdName] = useState("");
   const [newProdCat, setNewProdCat] = useState("Cleanser");
   const [importText, setImportText] = useState("");
+
+  // Theme state
+  const [themeState, setThemeState] = useState(getInitialTheme);
+
+  const isDark = themeState.theme === "dark";
+
+  // Apply theme whenever it changes
+  useEffect(() => { applyTheme(themeState.theme); }, [themeState.theme]);
+
+  // Auto-update theme if in auto mode (check every minute)
+  useEffect(() => {
+    if (!themeState.isAuto) return;
+    const interval = setInterval(() => {
+      const autoTheme = getAutoTheme();
+      setThemeState(prev => prev.isAuto ? { theme: autoTheme, isAuto: true } : prev);
+    }, 60000);
+    return () => clearInterval(interval);
+  }, [themeState.isAuto]);
+
+  const cycleTheme = () => {
+    setThemeState(prev => {
+      // Cycle: auto -> light -> dark -> auto
+      if (prev.isAuto) {
+        const next = "light";
+        localStorage.setItem(THEME_KEY, next);
+        return { theme: next, isAuto: false };
+      } else if (prev.theme === "light") {
+        localStorage.setItem(THEME_KEY, "dark");
+        return { theme: "dark", isAuto: false };
+      } else {
+        localStorage.removeItem(THEME_KEY);
+        return { theme: getAutoTheme(), isAuto: true };
+      }
+    });
+  };
+
+  // Get tag colors based on theme
+  const getTagColor = (tag) => {
+    if (isDark) return tagColors[tag] || { bg: "#222", text: "#aaa" };
+    return tagColorsLight[tag] || { bg: "#f0f0f0", text: "#555" };
+  };
 
   useEffect(() => { const t = setInterval(() => setNow(new Date()), 30000); return () => clearInterval(t); }, []);
 
@@ -573,6 +768,19 @@ function App() {
     else document.exitFullscreen?.();
   };
 
+  // Theme toggle button
+  const ThemeToggle = () => (
+    <button
+      className="icon-btn theme-toggle"
+      onClick={cycleTheme}
+      title={themeState.isAuto ? "Theme: Auto (click to switch)" : `Theme: ${themeState.theme} (click to switch)`}
+      aria-label={`Current theme: ${themeState.isAuto ? 'auto' : themeState.theme}. Click to cycle.`}
+    >
+      {isDark ? <MoonIcon /> : <SunIcon />}
+      {themeState.isAuto && <span className="theme-auto-dot" title="Auto mode" />}
+    </button>
+  );
+
   if (!loaded) {
     return (
       <div className="loading-screen">
@@ -598,8 +806,13 @@ function App() {
         <div className="display-header fade-in">
           <div className="display-day">{todayName}</div>
           <div className="display-controls">
-            <button className="icon-btn" onClick={toggleFullscreen} title="Fullscreen">⛶</button>
-            <button className="icon-btn" onClick={() => setView("admin")} title="Settings">⚙</button>
+            <ThemeToggle />
+            <button className="icon-btn" onClick={toggleFullscreen} title="Fullscreen" aria-label="Toggle fullscreen">
+              <ExpandIcon />
+            </button>
+            <button className="icon-btn" onClick={() => setView("admin")} title="Settings" aria-label="Open settings">
+              <SettingsIcon />
+            </button>
           </div>
         </div>
         <div className="display-time fade-in fd1">{timeStr}</div>
@@ -608,7 +821,7 @@ function App() {
             {isAM ? "☀️ Morning" : "🌙 Evening"}
           </span>
           {todayData.tags?.map(t => {
-            const c = tagColors[t] || { bg: "#222", text: "#aaa" };
+            const c = getTagColor(t);
             return <span key={t} className="tag" style={{ background: c.bg, color: c.text }}>{t}</span>;
           })}
         </div>
@@ -687,14 +900,17 @@ function App() {
     <div className="admin-page">
       <div className="admin-header fade-in">
         <div className="admin-title">Manage Routine</div>
-        <button className="back-btn" onClick={() => setView("display")}>← Display</button>
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <ThemeToggle />
+          <button className="back-btn" onClick={() => setView("display")}>← Display</button>
+        </div>
       </div>
 
       <div className="admin-tabs fade-in fd1">
         {["schedule","products","settings"].map(tab => (
           <button key={tab} className={`admin-tab ${adminTab === tab ? "active" : ""}`}
             onClick={() => setAdminTab(tab)}>
-            {tab === "schedule" ? "📅 Schedule" : tab === "products" ? "🧴 Products" : "⚙ Settings"}
+            {tab === "schedule" ? "Schedule" : tab === "products" ? "Products" : "Settings"}
           </button>
         ))}
       </div>
@@ -784,7 +1000,7 @@ function App() {
             <div className="tags-row">
               {TAG_OPTIONS.map(tag => {
                 const active = routine[editDay]?.tags?.includes(tag);
-                const c = tagColors[tag] || { bg: "#222", text: "#aaa" };
+                const c = getTagColor(tag);
                 return (
                   <button key={tag} className={`tag-toggle ${active ? "active" : ""}`}
                     style={active ? { background: c.bg, color: c.text, borderColor: "transparent" } : {}}
