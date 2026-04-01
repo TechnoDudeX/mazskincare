@@ -1,5 +1,5 @@
 {
-  "name": "skincare-routine",
+  "name": "dermaroutine",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0",
+    "@stripe/stripe-js": "^4.0.0",
+    "@supabase/supabase-js": "^2.45.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.0",
+    "stripe": "^16.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
